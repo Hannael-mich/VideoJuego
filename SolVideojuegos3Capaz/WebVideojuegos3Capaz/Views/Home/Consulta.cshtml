@@ -1,0 +1,50 @@
+﻿@using Entidad
+@model List<E_Videojuego> 
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Consulta</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-3">Videojuegos</h1>
+
+        @if (TempData["mensaje"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["mensaje"]
+            </div>
+        }
+        @if (TempData["error"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["error"]
+            </div>
+        }
+        <a href="/Home/IrAgregar" class="btn btn-info">Agregar</a>
+
+        @foreach(E_Videojuego juego in Model)
+        {
+            <div class="col"->
+                <div class="card">
+                    <img src="~/Images/@juego.Imagen" class="card-img-top" height="250"/>
+                    <div class="card-body">
+                        <h5 class="card-title">@juego.Nombre</h5>
+                        <p><b>Precio:</b>@juego.Precio.ToString("c")</p>
+                        <p><b>Fecha de lanzamiento:</b>@juego.FechaLanzamiento.ToString("dd/MM/yyyy")</p>
+                        <a href="#" class="btn btn-info">Editar</a>
+                        <a href="#" class="btn btn-danger">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

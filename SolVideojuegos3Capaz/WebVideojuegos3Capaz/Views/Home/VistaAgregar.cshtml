@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VistaAgregar</title>
+</head>
+<body>
+    <div> 
+        <h1>Nuevo Juego</h1>
+        <form action="/Home/Agregar" method="post" enctype="multipart/form-data">
+
+            <label>Nombre</label>
+            <input type="text" name="Nombre" />
+            <br /><br />
+
+            <label>Precio</label>
+            <input type="text" name="Precio" />
+            <br /><br />
+
+            <label>Fecha Lanzamiento</label>
+            <input type="date" name="FechaLanzamiento" />
+            <br /><br />
+
+            <label>Imagen</label>
+            <input type="file" name="archivoImagen" />
+            <br /><br />
+
+            <input type="submit" value="Guardar" />
+
+        </form>
+    </div>
+</body>
+</html>
